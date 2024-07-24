@@ -69,7 +69,8 @@ def position_pick(board,player):
     taking the input and puting it on the new board 
     '''
     position = None
-    #check position in empty_check is not changing without a for 
+    #check position in empty_check is not changing without a for.
+    
     while position not in range(1,10) and empty_check(board,position): 
         position  = int(input("Choose your position from 1-9 "))
 
