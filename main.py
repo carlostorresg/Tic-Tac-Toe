@@ -23,3 +23,4 @@ displayboard(board)
 #choose position 
 position_pick(board,player)
 
+print(board)

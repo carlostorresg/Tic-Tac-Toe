@@ -61,6 +61,9 @@ def empty_check(board,position):
     '''
     checking if the position is available or not 
     '''
+    if position > len(board):
+        return False
+
     return board[position] == " "
     
 
@@ -68,10 +71,10 @@ def position_pick(board,player):
     '''
     taking the input and puting it on the new board 
     '''
-    position = None
-    #check position in empty_check is not changing without a for.
+    position = 11
     
-    while position not in range(1,10) and empty_check(board,position): 
+   
+    while position not in range(1,10) and not empty_check(board,position): 
         position  = int(input("Choose your position from 1-9 "))
 
         board[position] = player
