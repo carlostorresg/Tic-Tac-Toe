@@ -80,6 +80,23 @@ def position_pick(board,player):
         board[position] = player
          
     return board
+#function to check if someone won 
+def win_check(board,player):
+    
+    combinations = [
+        [1,2,3],
+        [4,5,6],
+        [7,8,9],
+        [1,4,7],
+        [2,5,8],
+        [3,6,9],
+        [1,5,9],
+        [3,5,7]
+    ]
 
-
-
+    for combination in combinations:
+        if board[combination[0]] == player and board[combination[1]] == player and board[combination[2]] == player:
+            print(f"player {player} has won the game !!")
+            return True
+        
+    return False
