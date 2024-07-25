@@ -3,7 +3,7 @@ import os #imports the os to clear the screen
 import time #imports time for the timer 
 
 
-def displayboard(board):
+def display_board(board):
     '''
     prints the board
     '''
@@ -14,21 +14,26 @@ def displayboard(board):
     print("          " + board[7] + "|" + board[8] + "|" + board[9])
 
 
-def player_input_marker():
+def choose_marker():
     '''
     getting the marker from the player
     '''
-    player1 = " "
+    marker1 = " "
      
-    while player1 not in ["X", "O"]:
-        player1 = input("Choose between X or O \n").upper()
+    while marker1 not in ["X", "O"]:
 
-        player2 = "O" if player1 == "X" else "X" 
+        try:  
+      
+            marker1 = input("Player 1 choose between X or O \n").upper()
+
+            marker2 = "O" if marker1 == "X" else "X" 
+        except: 
+            print("enter a valid input")
          
-    return player1,player2
+    return marker1,marker2
 
 
-def flip_coin(player1,player2):
+def flip_coin():
     '''
     picks a random number between 1 and 2
     '''
@@ -36,14 +41,11 @@ def flip_coin(player1,player2):
 
     if flip == 1:
         
-        print(" " + player1 + " goes first ") 
-        player = player1 
-        return player 
+        print(" player 1 goes first ") 
+         
     else:
-        print(" " + player2 + " goes first ")
-        player = player2 
-        return player 
-
+        print("player 2 goes first ")
+        
 def clear_screen():
     '''
     es like putting the command clear in the termianl
@@ -57,31 +59,29 @@ def timer():
     print("game starting in 5 seconds")
     time.sleep(3)
 
-def empty_check(board,position):
+def is_position_empty(board,position):
     '''
     checking if the position is available or not 
     '''
-    if position > len(board):
-        return False
-
+    
     return board[position] == " "
     
 
-def position_pick(board,player):
+def choose_position(board):
     '''
     taking the input and puting it on the new board 
     '''
-    position = 11
+    position = 0
     
    
-    while position not in range(1,10) and not empty_check(board,position): 
+    while position not in range(1,10) and not is_position_empty(board,position): 
         position  = int(input("Choose your position from 1-9 "))
 
-        board[position] = player
+        return position 
          
-    return board
+    
 #function to check if someone won 
-def win_check(board,player):
+def win_check(board,marker):
     
     combinations = [
         [1,2,3],
@@ -95,8 +95,14 @@ def win_check(board,player):
     ]
 
     for combination in combinations:
-        if board[combination[0]] == player and board[combination[1]] == player and board[combination[2]] == player:
-            print(f"player {player} has won the game !!")
+        if board[combination[0]] == marker and board[combination[1]] == marker and board[combination[2]] == marker:
+            print(f"player {player2} has won the game !!")
             return True
         
     return False
+
+    #'''full_board():
+
+    #turn = player 2'''
+
+
