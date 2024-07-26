@@ -34,6 +34,8 @@ while game_on:
     
             board[position] = player1marker
 
+            clear_screen()
+            
             if win_check(board,player1marker):
                 break
 
@@ -50,7 +52,8 @@ while game_on:
             position = choose_position(board)
 
             board[position] = player2marker
-        
+
+            clear_screen() 
 
             if win_check(board,player2marker):
                  break
