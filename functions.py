@@ -12,6 +12,12 @@ def display_board(board):
     print("          " + board[4] + "|" + board[5] + "|" + board[6])
     print("       -----------       ")
     print("          " + board[7] + "|" + board[8] + "|" + board[9])
+    print("\n")
+    print("          1" "|" "2" "|" "3\n")
+    print("       -----------       ")
+    print("          4" "|" "5" "|" "6\n")
+    print("       -----------       ")
+    print("          7" "|" "8" "|" "9\n")
 
 
 def choose_marker():
@@ -40,12 +46,13 @@ def flip_coin():
     flip = random.randint(1,2)
 
     if flip == 1:
-        
         print(" player 1 goes first ") 
-         
+        turn = "p1"
     else:
-        print("player 2 goes first ")
         
+        print("player 2 goes first ")
+        turn = "p2"
+    return turn
 def clear_screen():
     '''
     es like putting the command clear in the termianl
@@ -74,10 +81,15 @@ def choose_position(board):
     position = 0
     
    
-    while position not in range(1,10) and not is_position_empty(board,position): 
-        position  = int(input("Choose your position from 1-9 "))
+    while position not in range(1,10) and is_position_empty(board,position): 
 
-        return position 
+        try:  
+            position  = int(input("Choose your position from 1-9 "))
+
+        except:
+            print("enter a valid input ") 
+          
+    return position 
          
     
 #function to check if someone won 
@@ -96,13 +108,24 @@ def win_check(board,marker):
 
     for combination in combinations:
         if board[combination[0]] == marker and board[combination[1]] == marker and board[combination[2]] == marker:
-            print(f"player {player2} has won the game !!")
+            print(" has won the game !!")
             return True
         
     return False
 
-    #'''full_board():
+def tie_check(board):
 
-    #turn = player 2'''
+    for positions in range(1,10):
+       
+       if is_position_empty(board,positions):
+           print("its a tie ")
+           return False
+
+    return True
+
+
+
+
+  
 
 
