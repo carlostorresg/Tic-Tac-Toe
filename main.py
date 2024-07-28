@@ -22,7 +22,7 @@ clear_screen()
 player1marker,player2marker = choose_marker()
 
 turn = flip_coin()
-
+#game stars.
 while game_on:
 
         if turn  == "p1":
