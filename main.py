@@ -29,19 +29,19 @@ while game_on:
 
     
             display_board(board)
-
+            #choosing the number on the board 
             position = choose_position(board)
-    
+            #the number chosen is assigned on the board with the new marker
             board[position] = player1marker
-
+            #clear the screen
             clear_screen()
-            
+            # checking if one of the combinations is true
             if win_check(board,player1marker):
                 break
-
+            #checking if the board is full
             elif tie_check(board):
                 break
-
+            #if neither win or tie is true is turn for player 2
             else: turn = "p2"
 
 
@@ -68,9 +68,6 @@ while game_on:
 
 game_on = False
 
-    
-    
-    
 
 
 
