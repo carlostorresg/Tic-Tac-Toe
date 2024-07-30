@@ -5,7 +5,7 @@ from functions import display_board, choose_marker, flip_coin, clear_screen, tim
 
 
 print("---------------Welcome to tic tac toe------------------")
-
+#creates the board 
 board = [" "] * 10
 
 
@@ -18,7 +18,7 @@ if game_on.startswith(yeschoice):
 else:
     game_on = False
 clear_screen()
-    
+#choose marker 
 player1marker,player2marker = choose_marker()
 
 turn = flip_coin()
@@ -65,7 +65,7 @@ while game_on:
 
         
 
-
+#ends the game
 game_on = False
 
 
