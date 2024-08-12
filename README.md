@@ -1,5 +1,12 @@
 # Tic Tac Toe Game
-A simple Tic Tac Toe game implemented in Python. 
+A simple Tic Tac Toe game implemented in Python.
+
+
+<img width="584" alt="Screenshot 2024-08-11 at 8 00 01 PM" src="https://github.com/user-attachments/assets/6d30b03e-9cb6-4d4e-99f7-047244fb9160">
+
+
+
+
 This project was my first experience with Python programming, offering a fun and interactive way to get started with coding. 
 The game allows two players to take turns and compete on a 3x3 grid until one player wins or the game ends in a draw.
 
